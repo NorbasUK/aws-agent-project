@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Runaway Runner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-wrapper">
+  <canvas id="gameCanvas" width="800" height="400"></canvas>
+  <div id="ui-overlay">
+    <div id="start-screen" class="screen">
+      <h1>🏃 Runaway Runner</h1>
+      <p class="tagline">Dodge the hazards. Grab the gels. Survive the run!</p>
+      <div class="controls-info">
+        <p><strong>↑ / ↓</strong> or <strong>W / S</strong> — Move up &amp; down</p>
+        <p>Collect <span class="powerup-text">⚡ Gels</span> and <span class="powerup-text">👟 Shoes</span> for toilet roll shields (max 3)</p>
+        <p>Avoid <span class="enemy-text">💩 Poos</span>, <span class="enemy-text">🐕 Dogs</span>, and <span class="enemy-text">🎂 Cake</span></p>
+      </div>
+      <button id="btn-start">Start Running!</button>
+    </div>
+    <div id="gameover-screen" class="screen" style="display:none">
+      <h1>Run Over!</h1>
+      <p id="final-score-text"></p>
+      <p id="final-distance-text"></p>
+      <div id="score-submit-area">
+        <form id="score-form">
+          <input type="text" id="player-name" maxlength="30" placeholder="Your name" required autocomplete="off">
+          <button type="submit" id="btn-submit-score">Save Score</button>
+        </form>
+        <p id="submit-status"></p>
+      </div>
+      <button id="btn-restart" style="display:none">Run Again!</button>
+      <div id="high-scores">
+        <h2>High Scores</h2>
+        <ol id="scores-list"></ol>
+      </div>
+    </div>
+  </div>
+  <div id="hud">
+    <span id="hud-score">Score: 0</span>
+    <span id="hud-shields">🧻 x 0</span>
+    <span id="hud-distance">0m</span>
+  </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
